@@ -1,0 +1,9 @@
+-created netbeans application for the project
+-collected data to use
+-created databases
+-had problem with mysql password authenticator 'caching_sha2_password'. Had to use run this code. 
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+-new error 'getting Big Integer error'. This is a JDBC Driver problem. tried many versions but still not working.
+-it seems netbeans 8.2 and mysql 8 is not compatible. I will use xampp to connect the database. I stop the MYSQL80 in services then the password is reset to none. I can still access my databases and xamp seems working just fine.
+-the database is working now. I imported mysql jdbc driver.
+-the databases are all gone. I wonder when it was deleted. 
