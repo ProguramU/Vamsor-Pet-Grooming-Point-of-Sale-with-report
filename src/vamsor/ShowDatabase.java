@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vamsor.pet.grooming.point.of.sale.system.with.database.and.report;
+package vamsor;
 
 import java.awt.*;
 import java.sql.*; //database
@@ -15,9 +15,9 @@ import javax.swing.table.*;
  *
  * @author Prog
  */
-public class VamsorPetGroomingPointOfSaleSystemWithDatabaseAndReport extends JFrame {
+public class ShowDatabase extends JFrame {
 
-    public VamsorPetGroomingPointOfSaleSystemWithDatabaseAndReport()
+    public ShowDatabase()
     {
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
@@ -82,8 +82,14 @@ public class VamsorPetGroomingPointOfSaleSystemWithDatabaseAndReport extends JFr
 
         for (int i = 0; i < columnNames.size(); i++ )
             columnNamesVector.add(columnNames.get(i));
-
-        //  Create table with database data    
+        
+        Vector v = new Vector(5);
+        //combobox
+        JComboBox filter = new JComboBox(v);
+        getContentPane().add(filter); 
+        
+        
+        //  Create table with database data    ``
         JTable table = new JTable(dataVector, columnNamesVector)
         {
             public Class getColumnClass(int column)
@@ -102,19 +108,23 @@ public class VamsorPetGroomingPointOfSaleSystemWithDatabaseAndReport extends JFr
             }
         };
 
+        
+        
         JScrollPane scrollPane = new JScrollPane( table );
         getContentPane().add( scrollPane );
 
         JPanel buttonPanel = new JPanel();
         getContentPane().add( buttonPanel, BorderLayout.SOUTH );
+        
+        setSize(800, 600);
     }
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VamsorPetGroomingPointOfSaleSystemWithDatabaseAndReport frame = new VamsorPetGroomingPointOfSaleSystemWithDatabaseAndReport();
-        frame.pack();
-        frame.setVisible(true);
+        ShowDatabase databaseFrame = new ShowDatabase();
+        databaseFrame.pack();
+        databaseFrame.setVisible(true);
     }
 }

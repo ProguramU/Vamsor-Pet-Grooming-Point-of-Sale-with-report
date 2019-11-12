@@ -7,3 +7,4 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 -it seems netbeans 8.2 and mysql 8 is not compatible. I will use xampp to connect the database. I stop the MYSQL80 in services then the password is reset to none. I can still access my databases and xamp seems working just fine.
 -the database is working now. I imported mysql jdbc driver.
 -the databases are all gone. I wonder when it was deleted. 
+-yey!! first time using git and github on real project.
